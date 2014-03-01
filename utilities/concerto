@@ -1,0 +1,9 @@
+#!/bin/bash
+export RAILS_ENV=production
+
+echo "Copying Concerto configuration from volume..."
+cp -r /opt/concerto/config /opt/concerto/rails-root/config
+
+echo "Starting Puma webserver..."
+cd /opt/concerto/rails-root
+puma
